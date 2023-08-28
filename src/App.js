@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import LoginLoading from "./pages/LoginLoading";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+        {/* <Route path="/" element={<Splash />} */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/loginLoding" element={<LoginLoading />} />
+        {/*<Route>*/}
+        {/*    <Route Path="/allProducts" element={<AllProduct/>} />*/}
+        {/*    <Route Path="/product/productRegister" element={<ProductRegister/>} />*/}
+        {/*    <Route Path="/product/productDetail" element={<ProductDetail/>} />*/}
+        {/*    <Route Path="/product/productOrderRegister" element={<ProductOrderRegister/>} />*/}
+        {/*    <Route Path="/product/allProductOrder" element={<AllProductOrder/>} />*/}
+        {/*    <Route Path="/store/storeRegister" element={<StoreRegister/>} />*/}
+        {/*    <Route Path="/store/storeProductOrder" element={<StoreProductOrderRegister/>} />*/}
+        {/*    <Route Path="/store/allStore" element={<AllStore />} />*/}
+        {/*    <Route Path="/store/storeDetail" element={<StoreDetail />} />*/}
+        {/*    <Route Path="/mypage" element={<MyPage />} />*/}
+        {/*</Route>*/}
+        {/*<Route path="*" element={<NotFound />}/>*/}
+    </Routes>
   );
 }
 

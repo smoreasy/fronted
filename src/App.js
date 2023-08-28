@@ -1,8 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import LoginLoading from "./pages/LoginLoading";
+import {useEffect} from "react";
 
 function App() {
+    function setScreenSize() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }
+    useEffect(() => {
+        setScreenSize();
+    });
+
   return (
     <Routes>
         {/* <Route path="/" element={<Splash />} */}

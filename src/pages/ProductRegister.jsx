@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import Input from "../components/common/Input";
-import FormSubmitButton from "../components/common/FormSubmitButton";
+
+import FormSubmitButton from "../components/common/Button/FormSubmitButton";
+import Input from "../components/common/Form/Input";
 const ProductRegister = () => {
     return (
         <ProductRegisterStyle>
@@ -8,6 +9,7 @@ const ProductRegister = () => {
                 for="product-name"
                 id="product-name"
                 text="상품명"
+                // value={}
             />
 
             <Input
@@ -15,6 +17,7 @@ const ProductRegister = () => {
                 for="product-left"
                 id="product-left"
                 text="재고"
+                // value={}
             />
 
             <Input
@@ -22,6 +25,7 @@ const ProductRegister = () => {
                 for="product-price"
                 id="product-price"
                 text="판매가"
+                // value={}
             />
 
             <Input

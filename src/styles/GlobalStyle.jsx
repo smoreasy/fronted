@@ -58,6 +58,12 @@ const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  
+  button {
+    width: 100%;
+    background-color: inherit;
+    border: 0;
+  }
 `
 
 export default GlobalStyle;

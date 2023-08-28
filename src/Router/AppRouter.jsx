@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import LoginLoading from "../pages/LoginLoading";
 import ContentLayout from "./ContentLayout";
 import AllProducts from "../pages/AllProducts";
+import ProductRegister from "../pages/ProductRegister";
 
 const AppRouter = () => {
     return (
@@ -13,8 +14,8 @@ const AppRouter = () => {
             <Route path="/loginLoading" element={<LoginLoading />} />
 
             <Route path="/" element={<ContentLayout />}>
-                <Route path="allProducts" element={<AllProducts />} />
-                {/*<Route path="/product/productRegister" element={<ProductRegister/>} />*/}
+                <Route path="product/all-products" element={<AllProducts />} />
+                <Route path="product/product-register" element={<ProductRegister/>} />
                 {/*<Route path="/product/productDetail" element={<ProductDetail/>} />*/}
                 {/*<Route path="/product/productOrderRegister" element={<ProductOrderRegister/>} />*/}
                 {/*<Route path="/product/allProductOrder" element={<AllProductOrder/>} />*/}

@@ -5,6 +5,8 @@ const LayoutStyle = css`
   margin: 0 auto;
   height: calc(var(--vh, 1vh) * 100);
   background-color: antiquewhite;
+  
+  position: relative;
 `
 const Layout = styled.article`
   ${LayoutStyle}

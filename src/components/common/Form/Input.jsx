@@ -15,7 +15,10 @@ const LabelStyle = styled.label`
 `
 
 const InputStyle = styled.input`
-  width: ${(props) => props.width || '100%'};
+  width: 100%;
+  padding: 10px 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   
   &:focus {
     border: 2px solid yellow;

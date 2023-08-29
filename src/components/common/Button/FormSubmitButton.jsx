@@ -9,5 +9,11 @@ const FormSubmitButton = (props) => {
 export default FormSubmitButton;
 
 const FormSubmitButtonStyle = styled.button`
-    width: 100%;
+  width: 100%;
+  padding: 10px 0;
+  
+  background-color: cadetblue;
+  border-radius: 8px;
+  
+  text-align: center;
 `

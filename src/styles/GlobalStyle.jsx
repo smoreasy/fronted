@@ -21,7 +21,8 @@ const GlobalStyle = createGlobalStyle`
   article, aside, canvas, details, embed,
   figure, figcaption, footer, header, hgroup,
   menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
+  time, mark, audio, video,
+  button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -61,9 +62,8 @@ const GlobalStyle = createGlobalStyle`
   
   button {
     background-color: inherit;
-    
-    border: 0;
-    cursor: pointer;;
+    cursor: pointer;
+    text-align: inherit;
   }
 `
 

@@ -26,7 +26,7 @@ const HeaderBackStyle = styled.header`
   align-items: center;
   
   width: 100%;
-  background: #539408;
+  border-bottom: 1px solid #ccc;
 
   position: absolute;
   top: 0;

@@ -11,8 +11,8 @@ const Navbar = () => {
 
     const navItems = [
         {text: '홈', image: IconHome, path: ['product/all-products']},
-        {text: '상품등록', image: IconHome, path: ['/login']},
-        {text: '입점처', image: IconUser, path: ['/mystore']},
+        {text: '상품등록', image: IconHome, path: ['/product/product-register']},
+        {text: '입점처', image: IconUser, path: ['/login']},
         {text: '마이', image: IconUser, path: ['/mypage']},
     ];
 

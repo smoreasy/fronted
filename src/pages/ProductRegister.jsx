@@ -9,7 +9,7 @@ const ProductRegister = () => {
                 for="product-name"
                 id="product-name"
                 text="상품명"
-                // value={}
+                placeholder="상품 이름을 입력해주세요."
             />
 
             <Input
@@ -17,7 +17,7 @@ const ProductRegister = () => {
                 for="product-left"
                 id="product-left"
                 text="재고"
-                // value={}
+                placeholder="재고 개수를 입력해주세요."
             />
 
             <Input
@@ -25,7 +25,7 @@ const ProductRegister = () => {
                 for="product-price"
                 id="product-price"
                 text="판매가"
-                // value={}
+                placeholder="판매금액을 입력해주세요."
             />
 
             <Input
@@ -33,6 +33,7 @@ const ProductRegister = () => {
                 for="product-price"
                 id="product-price"
                 text="누적 판매 개수"
+                placeholder="누적 판매 개수를 입력해주세요."
             />
 
             <select>
@@ -48,7 +49,7 @@ const ProductRegister = () => {
                 text="대표 이미지"
             />
 
-            <FormSubmitButton text="등록하기"></FormSubmitButton>
+            <FormSubmitButton text="등록하기" />
         </ProductRegisterStyle>
     )
 }

@@ -60,9 +60,10 @@ const GlobalStyle = createGlobalStyle`
   }
   
   button {
-    width: 100%;
     background-color: inherit;
+    
     border: 0;
+    cursor: pointer;;
   }
 `
 

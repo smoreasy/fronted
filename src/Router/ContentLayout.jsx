@@ -5,7 +5,7 @@ import HeaderBack from "../components/common/Header/HeaderBack";
 const ContentLayout = () => {
     return (
         <>
-            <HeaderBack />
+            <HeaderBack text="전체상품" />
             <Outlet />
             <Navbar />
         </>

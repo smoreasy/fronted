@@ -10,7 +10,7 @@ const Navbar = () => {
     const location = useLocation();
 
     const navItems = [
-        {text: '홈', image: IconHome, path: ['/all-product']},
+        {text: '홈', image: IconHome, path: ['product/all-products']},
         {text: '상품등록', image: IconHome, path: ['/login']},
         {text: '입점처', image: IconUser, path: ['/mystore']},
         {text: '마이', image: IconUser, path: ['/mypage']},
@@ -55,10 +55,11 @@ export default Navbar;
 
 const NavbarStyle = styled.nav`
   width: 100%;
-  background: #539408;
   
   position: absolute;
   bottom: 0;
+  
+  border-top: 1px solid #ccc;
   
   ul {
     display: flex;
@@ -66,9 +67,9 @@ const NavbarStyle = styled.nav`
       width: calc(100% / 4);
       button {
         width: 100%;
-        background-color: yellow;
-        
-        padding: 10px 0;
+        background-color: #fff;
+        padding: 14px 0;
+        text-align: center;
       }
     }
   }

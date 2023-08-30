@@ -1,4 +1,4 @@
-const ProductListInit = () => {
+const ProductInit = () => {
     return (
         <>
             <h1>등록된 상품이 없습니다.</h1>
@@ -7,4 +7,4 @@ const ProductListInit = () => {
     )
 }
 
-export default ProductListInit;
+export default ProductInit;

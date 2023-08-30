@@ -3,7 +3,7 @@ import Splash from "../pages/Splash";
 import Login from "../pages/Login";
 import LoginLoading from "../pages/LoginLoading";
 import ContentLayout from "./ContentLayout";
-import AllProducts from "../pages/AllProducts";
+import ProductPage from "../pages/ProductPage";
 import ProductRegister from "../pages/ProductRegister";
 import MyStore from '../pages/MyStore';
 import MyPage from "../pages/MyPage";
@@ -16,7 +16,7 @@ const AppRouter = () => {
             <Route path="/loginLoading" element={<LoginLoading />} />
 
             <Route path="/" element={<ContentLayout />}>
-                <Route path="product/all-products" element={<AllProducts />} />
+                <Route path="product/all-products" element={<ProductPage />} />
                 <Route path="product/product-register" element={<ProductRegister/>} />
                 {/*<Route path="/product/productDetail" element={<ProductDetail/>} />*/}
                 {/*<Route path="/product/productOrderRegister" element={<ProductOrderRegister/>} />*/}

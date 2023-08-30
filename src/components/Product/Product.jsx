@@ -1,8 +1,8 @@
 import ProductList from "./ProductList";
 
-const Product = ({props}) => {
+const Product = (props) => {
     return (
-        <ProductList />
+        <ProductList props={props.productData}/>
     )
 }
 

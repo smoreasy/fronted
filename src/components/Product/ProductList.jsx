@@ -44,10 +44,10 @@ const data = [
     },
 
 ]
-const ProductList = () => {
+const ProductList = (props) => {
     return (
         <ProductListStyle>
-            {data.map((ele, idx) => (
+            {props.data.map((ele, idx) => (
                 <ProductListItem image={ele.image} text={ele.상품명} number={ele.number}/>
             ))}
         </ProductListStyle>

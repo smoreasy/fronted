@@ -7,7 +7,7 @@ const ProductDetailPage = () => {
     const [productDetailData, setProductDetailData] = useState(null);
 
     useEffect(() => {
-        getProductDetailData();
+        getProductDetailData(id);
     }, [id]);
 
     const getProductDetailData = async (productId) => {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ProductDetail = (props) => {
+    console.log(props)
     return (
         <ProductDetailStyle>
             <img src="https://cdn.pixabay.com/photo/2015/10/10/04/19/totoro-980324_1280.jpg" alt="" />

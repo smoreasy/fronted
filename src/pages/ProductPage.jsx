@@ -27,7 +27,7 @@ const ProductPage = () => {
 
     return (
         <>
-            {productData ? <Product props={productData}/> : <ProductInit />}
+            {productData ? <Product productData={productData}/> : <ProductInit />}
         </>
     )
 }

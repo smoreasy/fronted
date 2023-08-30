@@ -21,7 +21,7 @@ const AppRouter = () => {
                 {/*<Route path="/product/productDetail" element={<ProductDetail/>} />*/}
                 {/*<Route path="/product/productOrderRegister" element={<ProductOrderRegister/>} />*/}
                 {/*<Route path="/product/allProductOrder" element={<AllProductOrder/>} />*/}
-                <Route path="mystore" element={<MyStore />} />
+                <Route path="store" element={<MyStore />} />
                 {/*<Route path="/store/storeRegister" element={<StoreRegister/>} />*/}
                 {/*<Route path="/store/storeProductOrder" element={<StoreProductOrderRegister/>} />*/}
                 {/*<Route path="/store/allStore" element={<AllStore />} />*/}

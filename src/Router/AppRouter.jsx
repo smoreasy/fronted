@@ -4,9 +4,10 @@ import Login from "../pages/Login";
 import LoginLoading from "../pages/LoginLoading";
 import ContentLayout from "./ContentLayout";
 import ProductPage from "../pages/ProductPage";
-import ProductRegister from "../pages/ProductRegister";
+import ProductRegisterPage from "../pages/ProductRegisterPage";
 import MyStore from '../pages/MyStore';
 import MyPage from "../pages/MyPage";
+import ProductDetailPage from "../pages/ProductDetailPage";
 
 const AppRouter = () => {
     return (
@@ -17,8 +18,8 @@ const AppRouter = () => {
 
             <Route path="/" element={<ContentLayout />}>
                 <Route path="product/all-products" element={<ProductPage />} />
-                <Route path="product/product-register" element={<ProductRegister/>} />
-                {/*<Route path="/product/productDetail" element={<ProductDetail/>} />*/}
+                <Route path="product/product-register" element={<ProductRegisterPage/>} />
+                <Route path="/product/product-detail/:id" element={<ProductDetailPage />} />
                 {/*<Route path="/product/productOrderRegister" element={<ProductOrderRegister/>} />*/}
                 {/*<Route path="/product/allProductOrder" element={<AllProductOrder/>} />*/}
                 <Route path="store" element={<MyStore />} />

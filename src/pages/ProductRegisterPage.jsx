@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import FormSubmitButton from "../components/common/Button/FormSubmitButton";
 import Input from "../components/common/Form/Input";
-const ProductRegister = () => {
+const ProductRegisterPage = () => {
     return (
         <ProductRegisterStyle>
             <Input
@@ -54,7 +54,7 @@ const ProductRegister = () => {
     )
 }
 
-export default ProductRegister;
+export default ProductRegisterPage;
 
 const ProductRegisterStyle = styled.form`
 `

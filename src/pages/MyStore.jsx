@@ -1,4 +1,3 @@
-import StoreList from "../components/store/StoreList";
 
 const MyStore = () => {
     const data = [
@@ -45,7 +44,6 @@ const MyStore = () => {
     ]
     return (
         <>
-            <StoreList props={data} />
         </>
     )
 }

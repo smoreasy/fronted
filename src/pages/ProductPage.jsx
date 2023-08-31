@@ -1,38 +1,35 @@
-import ProductDetail from "../components/Product/ProductDetail";
-import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import Product from "../components/Product/Product";
 
-const ProductDetailPage = () => {
-    const { id } = useParams();
-    const [productDetailData, setProductDetailData] = useState(null);
+const ProductPage = () => {
+    const [productData, setProductData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        getProductData();
+    }, []);
 
-        getProductDetailData(id);
-    }, [id]);
-
-    const getProductDetailData = async (productId) => {
+    const getProductData = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/products/${productId}`, {
+            const response = await fetch(`http://43.200.49.69:8080/products`, {
                 method: 'GET',
                 // headers: {
                 //     Authorization: `Bearer ${token}`,
                 // },
             });
             const responseData = await response.json();
-            setProductDetailData(responseData);
+            setProductData(responseData);
             setIsLoading(false)
         } catch (error) {
             console.log('API 응답에 실패했습니다.', error);
         }
     };
-    console.log(productDetailData)
+    console.log(productData)
     return (
         <>
-            { isLoading ? <p>'로딩 중입니다'</p> :  <ProductDetail productDetailData={productDetailData}/> }
+            { isLoading ? <p>'로딩 중입니다'</p> :  <Product productData={productData}/> }
         </>
     )
 }
 
-export default ProductDetailPage;
+export default ProductPage;

@@ -4,7 +4,7 @@ const Input = (props) => {
     const { type } = props;
     return (
         <>
-            <LabelStyle htmlFor={props.for}>{props.text}</LabelStyle>
+            <LabelStyle htmlFor={props.for}>{props.label}</LabelStyle>
             <InputStyle id={props.id} type={type ? type : 'text'} {...props} />
         </>
     )

@@ -8,6 +8,7 @@ import ProductRegisterPage from "../pages/ProductRegisterPage";
 import MyStore from '../pages/MyStore';
 import MyPage from "../pages/MyPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
+import ProductDetailModifyPage from "../pages/ProductDetailModifyPage";
 
 const AppRouter = () => {
     return (
@@ -20,7 +21,7 @@ const AppRouter = () => {
                 <Route path="product/all-products" element={<ProductPage />} />
                 <Route path="product/product-register" element={<ProductRegisterPage/>} />
                 <Route path="/product/product-detail/:id" element={<ProductDetailPage />} />
-                {/*<Route path="/product/productOrderRegister" element={<ProductOrderRegister/>} />*/}
+                <Route path="/product/product-detail-modify/:id" element={<ProductDetailModifyPage />} />
                 {/*<Route path="/product/allProductOrder" element={<AllProductOrder/>} />*/}
                 <Route path="store" element={<MyStore />} />
                 {/*<Route path="/store/storeRegister" element={<StoreRegister/>} />*/}

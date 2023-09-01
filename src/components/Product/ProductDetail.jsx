@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const ProductDetail = (props) => {
-    console.log(props)
+    const handleProductDelete = () => {
+
+    }
     return (
         <ProductDetailStyle>
             <img src="https://cdn.pixabay.com/photo/2015/10/10/04/19/totoro-980324_1280.jpg" alt="" />
@@ -22,6 +25,10 @@ const ProductDetail = (props) => {
                     <p>{props.productDetailData.productStatus}</p>
                 </li>
             </ul>
+            <Link to={`/product/product-detail-modify/${props.productDetailData.id}`}>
+                <button>상품 정보 수정하기</button>
+            </Link>
+            <button onClick={handleProductDelete}>삭제하기</button>
         </ProductDetailStyle>
     )
 }

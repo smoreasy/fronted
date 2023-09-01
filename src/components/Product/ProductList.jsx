@@ -7,7 +7,7 @@ const ProductList = (props) => {
         <ProductListStyle>
             <p>상품이 있으면 나타나는 페이지</p>
             {props.props.map((ele, idx) => (
-                <Link key={ele.id} to={'/product'}>
+                <Link key={ele.id} to={`/product/product-detail/${ele.id}`}>
                     <ProductListItem image={ele.image} text={ele.name} number={ele.stock}/>
                 </Link>
             ))}

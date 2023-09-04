@@ -1,6 +1,5 @@
-import StoreList from "../components/store/StoreList";
 
-const MyStore = () => {
+const StorePage = () => {
     const data = [
         {
             상품명: '상품명이여유',
@@ -45,9 +44,8 @@ const MyStore = () => {
     ]
     return (
         <>
-            <StoreList props={data} />
         </>
     )
 }
 
-export default MyStore;
+export default StorePage;

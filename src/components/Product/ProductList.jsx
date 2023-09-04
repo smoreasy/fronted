@@ -1,54 +1,14 @@
 import ProductListItem from "./ProductListItem";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
-const data = [
-    {
-        상품명: '상품명이여유',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '3',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '13',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '33',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '3',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '3',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '3',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '3',
-    },
-    {
-        상품명: '상품명이여유1',
-        image: "https://cdn.pixabay.com/photo/2023/08/18/16/15/stairs-8198875_1280.jpg",
-        number: '3',
-    },
-
-]
-const ProductList = () => {
+const ProductList = (props) => {
     return (
         <ProductListStyle>
-            {data.map((ele, idx) => (
-                <ProductListItem image={ele.image} text={ele.상품명} number={ele.number}/>
+            {props.props.map((ele, idx) => (
+                <Link key={ele.id} to={`/product/product-detail/${ele.id}`}>
+                    <ProductListItem image={ele.image} text={ele.name} number={ele.stock}/>
+                </Link>
             ))}
         </ProductListStyle>
     )
@@ -56,8 +16,7 @@ const ProductList = () => {
 export default ProductList;
 
 const ProductListStyle = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 `
-

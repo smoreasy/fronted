@@ -4,8 +4,10 @@ const ProductListItem = (props) => {
     return (
         <ProductListItemStyle>
             <img src={props.image} />
-            <h3>{props.text}</h3>
-            <p>{props.number}개</p>
+            <div>
+                <h3>{props.text}</h3>
+                <p>{props.number}개</p>
+            </div>
         </ProductListItemStyle>
     )
 }
@@ -13,12 +15,22 @@ const ProductListItem = (props) => {
 export default ProductListItem;
 
 const ProductListItemStyle = styled.button`
-  width: calc((100% - 20px) / 2);
+  width: 100%;
   
   img {
     width: 100%;
+    height: 140px;
+    background-color: cadetblue;
+    border-radius: 10px;
   }
-  h3 {
+  div {
+    padding: 8px 10px 14px 10px;
+  }
+  div h3 {
     margin: 8px 0 6px 0;
+  }
+  div p {
+    color: var(--basic-color);
+    font-weight: bold;
   }
 `

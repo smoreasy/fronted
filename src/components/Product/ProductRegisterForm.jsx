@@ -144,7 +144,7 @@ const ProductRegisterForm = () => {
                     </select>
                 </li>
                 <li>
-                    <select onChange={handleSellingPrice}>
+                    <select>
                         <option>스티커</option>
                         <option>다이어리</option>
                         <option>키링</option>

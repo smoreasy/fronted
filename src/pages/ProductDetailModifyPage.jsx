@@ -1,10 +1,9 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-// import axios from "axios";
 import styled from "styled-components";
-
 import Input from "../components/common/Form/Input";
 import FormSubmitButton from "../components/common/Button/FormSubmitButton";
+
 const ProductDetailModifyPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -14,7 +13,7 @@ const ProductDetailModifyPage = () => {
     const [totalSaleValue, setTotalSaleValue] = useState(0);
     const [costValue, setCostValue] = useState(0);
     const [sellingPriceValue, setSellingPriceValue] = useState(0);
-    const [productStatusValue, setProductStatusValue] = useState('selling');
+    const [productStatusValue, setProductStatusValue] = useState('판매 중');
     const [categoryIdValue, setCategoryIdValue] = useState(1);
 
     const productStatusOption = [
@@ -55,11 +54,12 @@ const ProductDetailModifyPage = () => {
         } catch(error) {
             console.log(error)
         }
-    }, []);
+    }, [id]);
 
-    const handleUpdate = () => {
+    const handleUpdate = e => {
+        e.preventDefault();
+
         try {
-            console.log('here is ...')
             fetch(`http://43.200.49.69:8080/products/${id}`, {
                 method: 'PUT',
                 headers: {
@@ -70,7 +70,7 @@ const ProductDetailModifyPage = () => {
                     totalSale: `${totalSaleValue}`,
                 })
             }).then((response) => {
-                return response.json();
+                response.json();
             }).then((data) => {
                 console.log(data);
                 navigate('/product/all-products');
@@ -79,6 +79,7 @@ const ProductDetailModifyPage = () => {
             console.log('error: ', error);
         }
     }
+
 
 
     return (
@@ -139,18 +140,20 @@ const ProductDetailModifyPage = () => {
                         readOnly
                     />
                 </li>
-                {/*<li>*/}
-                {/*    <select>*/}
-                {/*        <option>{productStatusValue}</option>*/}
-                {/*    </select>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                {/*    <select onChange={handleSellingPrice}>*/}
-                {/*        <option>스티커</option>*/}
-                {/*        <option>다이어리</option>*/}
-                {/*        <option>키링</option>*/}
-                {/*    </select>*/}
-                {/*</li>*/}
+                <li>
+                    <select onChange={handleProductStatus}>
+                        {productStatusOption.map((option) => (
+                            <option value={option.value}>{option.label}</option>
+                        ))}
+                    </select>
+                </li>
+                <li>
+                    <select>
+                        <option>스티커</option>
+                        <option>다이어리</option>
+                        <option>키링</option>
+                    </select>
+                </li>
                 <li>
                     {/*<Input*/}
                     {/*    label="대표 이미지"*/}
@@ -162,7 +165,6 @@ const ProductDetailModifyPage = () => {
                     {/*{uploadImage.length > 0 && <img src={uploadImage} alt="" />}*/}
                 </li>
             </ul>
-
             <FormSubmitButton type="submit" text="수정하기" />
         </ProductDetailModifyFormStyle>
     )

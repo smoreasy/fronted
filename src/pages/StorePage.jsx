@@ -1,5 +1,5 @@
 
-const MyStore = () => {
+const StorePage = () => {
     const data = [
         {
             상품명: '상품명이여유',
@@ -48,4 +48,4 @@ const MyStore = () => {
     )
 }
 
-export default MyStore;
+export default StorePage;

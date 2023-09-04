@@ -6,7 +6,7 @@ import styled from "styled-components";
 const ContentLayout = () => {
     return (
         <>
-            <HeaderBack text="전체상품" />
+            <HeaderBack />
             <OutletStyle>
                 <Outlet />
             </OutletStyle>
@@ -18,6 +18,8 @@ const ContentLayout = () => {
 export default ContentLayout;
 
 const OutletStyle = styled.div`
-  width: 100% - 60px;
-  padding: 80px 30px;
+  padding: 80px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  
 `

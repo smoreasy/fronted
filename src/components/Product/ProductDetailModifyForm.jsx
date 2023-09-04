@@ -2,10 +2,9 @@ import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 // import axios from "axios";
 import styled from "styled-components";
-
-import Input from "../components/common/Form/Input";
-import FormSubmitButton from "../components/common/Button/FormSubmitButton";
-const ProductDetailModifyPage = () => {
+import Input from "../common/Form/Input";
+import FormSubmitButton from "../common/Button/FormSubmitButton";
+const ProductDetailModifyForm = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -70,10 +69,8 @@ const ProductDetailModifyPage = () => {
                     totalSale: `${totalSaleValue}`,
                 })
             }).then((response) => {
-                return response.json();
-            }).then((data) => {
-                console.log(data);
-                navigate('/product/all-products');
+                console.log(response);
+                navigate('/product/all-products')
             })
         } catch(error) {
             console.log('error: ', error);
@@ -167,7 +164,7 @@ const ProductDetailModifyPage = () => {
         </ProductDetailModifyFormStyle>
     )
 }
-export default ProductDetailModifyPage;
+export default ProductDetailModifyForm;
 
 const ProductDetailModifyFormStyle = styled.form`
   ul li {

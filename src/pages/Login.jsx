@@ -33,7 +33,7 @@ const Login = () => {
                     <Link to={ele.link}>
                         {/* LoginButton 따로 컴포넌트화 필요성 */}
                         <LoginButtonStyle>
-                            <img src={ele.logo} width="25" height="25"/>
+                            <img key={ele.id} src={ele.logo} width="25" height="25"/>
                             {ele.method}로 로그인
                         </LoginButtonStyle>
                     </Link>

@@ -10,10 +10,10 @@ const Navbar = () => {
     const location = useLocation();
 
     const navItems = [
-        {text: '홈', image: IconHome, path: ['product/all-products']},
-        {text: '상품등록', image: IconHome, path: ['/product/product-register']},
-        {text: '입점처', image: IconUser, path: ['/store']},
-        {text: '마이', image: IconUser, path: ['/mypage']},
+        {text: '홈', image: IconHome, path: ['product/all-products'], id: 0},
+        {text: '상품등록', image: IconHome, path: ['/product/product-register'], id: 1},
+        {text: '입점처', image: IconUser, path: ['/store/all-stores'], id: 2},
+        {text: '마이', image: IconUser, path: ['/mypage'], id: 3},
     ];
 
     useEffect(() => {
@@ -22,10 +22,9 @@ const Navbar = () => {
     return (
         <NavbarStyle>
             <ul>
-                {navItems.map((ele, idx) =>(
-                    <li onClick={() => {navigate((ele.path[0]))}}>
+                {navItems.map((ele, idx) => (
+                    <li key={ele.id} onClick={() => {navigate((ele.path[0]))}}>
                         <button>
-                            {/* 컴포넌트 넣는 법 */}
                             <p>{ele.text}</p>
                         </button>
                     </li>
@@ -57,6 +56,7 @@ const NavbarStyle = styled.nav`
   width: 100%;
   
   position: absolute;
+  left: 0;
   bottom: 0;
   
   border-top: 1px solid #ccc;

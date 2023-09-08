@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
-const FormSubmitButton = (props) => {
+const SubmitButton = (props) => {
     return (
-        <FormSubmitButtonStyle>{props.text}</FormSubmitButtonStyle>
+        <SubmitButtonStyle>{props.text}</SubmitButtonStyle>
     );
 }
 
-export default FormSubmitButton;
+export default SubmitButton;
 
-const FormSubmitButtonStyle = styled.button`
+const SubmitButtonStyle = styled.button`
   width: 100%;
   padding: 10px 0;
   
-  background-color: cadetblue;
+  background-color: var(--basic-color);
+  color: var(--basic-font-color);
+  
   border-radius: 8px;
   
   text-align: center;

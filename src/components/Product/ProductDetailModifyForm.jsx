@@ -55,7 +55,9 @@ const ProductDetailModifyForm = () => {
         }
     }, []);
 
-    const handleUpdate = () => {
+    const handleUpdate = e => {
+        e.preventDefault();
+
         try {
             console.log('here is ...')
             fetch(`http://43.200.49.69:8080/products/${id}`, {

@@ -20,6 +20,8 @@ export default ContentLayout;
 const OutletStyle = styled.div`
   padding: 80px 40px;
   width: 100%;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow-y: scroll;
   box-sizing: border-box;
   
 `

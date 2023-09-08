@@ -64,6 +64,8 @@ const HeaderBackStyle = styled.header`
   
   width: 100%;
   border-bottom: 1px solid #ccc;
+  
+  background-color: #fff;
 
   position: absolute;
   top: 0;

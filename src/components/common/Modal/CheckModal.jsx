@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CheckModal = ({ logout, handleCancel, ...props }) => {
+const CheckModal = ({
+                        handleCancelCheckModal,
+                        ...props
+                    }) => {
     return (
-        <ModalBackground onClick={handleCancel}>
+        <ModalBackground onClick={handleCancelCheckModal}>
             <ModalLayout>
                 <ModalTxt>{props.txt}</ModalTxt>
                 <ModalButtonLayout>
-                    <ModalButton onClick={props.leftClick ? props.leftClick : handleCancel} {...props}>
-                        {props.leftbtn || '취소'}
-                    </ModalButton>
-                    <ModalButton onClick={props.rightClick ? props.rightClick : logout} color='var(--primary)' {...props}>
-                        {props.rightbtn || '삭제'}
-                    </ModalButton>
+                    <ModalButton onClick={handleCancelCheckModal} {...props}>{props.leftbtn}</ModalButton>
+                    <ModalButton onClick={handleCancelCheckModal} {...props}>{props.rightbtn}</ModalButton>
                 </ModalButtonLayout>
             </ModalLayout>
         </ModalBackground>

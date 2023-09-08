@@ -1,6 +1,5 @@
 import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
-// import axios from "axios";
 import styled from "styled-components";
 import Input from "../common/Form/Input";
 import FormSubmitButton from "../common/Button/FormSubmitButton";

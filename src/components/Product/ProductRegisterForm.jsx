@@ -1,8 +1,11 @@
+import React from 'react';
 import Input from "../common/Form/Input";
 import FormSubmitButton from "../common/Button/FormSubmitButton";
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 import styled from "styled-components";
+import axios from "axios";
+
 
 const ProductRegisterForm = () => {
     const navigate = useNavigate();
@@ -36,20 +39,21 @@ const ProductRegisterForm = () => {
     const handleSellingPrice = e => {
         setSellingPriceValue(e.target.value);
     }
-    // const handleImageUpload = e => {
-    //     const file = e.target.files[0];
-    //     const formData = new FormData();
-    //     formData.append('image', file);
-    //
-    //     axios({
-    //         method: 'POST',
-    //         url: 'http://43.200.49.69:8080/products',
-    //         data: formData,
-    //     }).then(result => {
-    //         console.log('요청성공');
-    //         // setUploadImageValue('http://43.200.49.69:8080/products');
-    //     });
-    // };
+    const handleImageUpload = e => {
+        e.preventDefault();
+
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+
+        axios({
+            method: 'POST',
+            url: 'http://43.200.49.69:8080/products',
+            data: formData,
+        }).then(result => {
+            console.log(result)
+        });
+    };
 
     const handleProductRegisterFormSubmit = e => {
         e.preventDefault();
@@ -66,12 +70,11 @@ const ProductRegisterForm = () => {
                     cost: `${costValue}`,
                     sellingPrice: `${sellingPriceValue}`,
                     productStatus: `${productStatusValue}`,
-                    image: `${uploadImageValue}`,
+                    file: `${uploadImageValue}`,
                     categoryId: 1,
                 })
             }).then((response) => {
                 const responseBody = response.json();
-                console.log(responseBody);
                 navigate('/product/all-products');
             })
         } catch (error) {
@@ -154,12 +157,12 @@ const ProductRegisterForm = () => {
                     <Input
                         label="대표 이미지"
                         type="file"
-                        for="product-image"
+                        htmlFor="product-image"
                         id="product-image"
-                        onChange={e => setUploadImageValue(e.target.value)}
+                        onChange={handleImageUpload}
                         value={uploadImageValue}
                     />
-                    {/*{uploadImageValue.length > 0 && <img src={uploadImageValue} alt="" />}*/}
+                    {uploadImageValue.length > 0 && <img className="image-place" src={uploadImageValue} alt="" />}
                 </li>
             </ul>
 
@@ -171,11 +174,21 @@ export default ProductRegisterForm;
 
 
 const ProductRegisterFormStyle = styled.form`
-    ul li {
-      margin: 20px 0;
-    }
+  ul li {
+    margin: 20px 0;
+  }
+  
   ul li select {
     width: 100%;
     padding: 10px 0;
+  }
+  
+  .image-place {
+    width: 100%;
+    height: 200px;
+    
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: burlywood;
   }
 `

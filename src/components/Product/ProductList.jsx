@@ -6,7 +6,7 @@ const ProductList = (props) => {
     return (
         <ProductListStyle>
             {props.props.map((ele, idx) => (
-                <Link key={ele.id} to={`/product/product-detail/${ele.id}`}>
+                <Link key={idx} to={`/product/product-detail/${ele.id}`}>
                     <ProductListItem image={ele.image} text={ele.name} number={ele.stock}/>
                 </Link>
             ))}

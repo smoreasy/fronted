@@ -15,26 +15,6 @@ const ProductDetailModifyForm = () => {
     const [productStatusValue, setProductStatusValue] = useState('selling');
     const [categoryIdValue, setCategoryIdValue] = useState(1);
 
-    const productStatusOption = [
-        {
-            label: '판매 중',
-            value: 'selling',
-        },
-        {
-            label: '판매 중지',
-            value: 'selling',
-        },
-        {
-            label: '품절',
-            value: 'selling',
-        },
-    ]
-    const handleProductStatus = e => {
-        setProductStatusValue(e.target.value);
-    }
-    const handleSellingPrice = e => {
-        setSellingPriceValue(e.target.value);
-    }
     useEffect(() => {
         try {
             fetch(`http://43.200.49.69:8080/products/${id}`, {
@@ -55,11 +35,14 @@ const ProductDetailModifyForm = () => {
         }
     }, []);
 
+    const handleSellingPrice = e => {
+        setSellingPriceValue(e.target.value);
+    }
+
     const handleUpdate = e => {
         e.preventDefault();
 
         try {
-            console.log('here is ...')
             fetch(`http://43.200.49.69:8080/products/${id}`, {
                 method: 'PUT',
                 headers: {
@@ -68,10 +51,12 @@ const ProductDetailModifyForm = () => {
                 body: JSON.stringify({
                     stock: `${stockValue}`,
                     totalSale: `${totalSaleValue}`,
+                    cost: `${costValue}`,
+                    sellingPrice: `${sellingPriceValue}`
                 })
             }).then((response) => {
                 console.log(response);
-                navigate('/product/all-products')
+                navigate('/product/all-products');
             })
         } catch(error) {
             console.log('error: ', error);
@@ -100,7 +85,7 @@ const ProductDetailModifyForm = () => {
                         id="product-left"
                         placeholder="재고 개수를 입력해주세요."
                         value={stockValue}
-                        onChange={e => setStockValue(e.target.value)}
+                        onChange={(e) => setStockValue(e.target.value)}
                     />
                 </li>
                 <li>
@@ -111,7 +96,7 @@ const ProductDetailModifyForm = () => {
                         id="product-price"
                         placeholder="누적 판매 개수를 입력해주세요."
                         value={totalSaleValue}
-                        onChange={e => setTotalSaleValue(e.target.value)}
+                        onChange={(e) => setTotalSaleValue(e.target.value)}
                     />
                 </li>
                 <li>
@@ -122,7 +107,7 @@ const ProductDetailModifyForm = () => {
                         id="cost"
                         placeholder="원가를 입력해주세요."
                         value={costValue}
-                        readOnly
+                        onChange={(e) => setCostValue(e.target.value)}
                     />
                 </li>
 
@@ -134,21 +119,21 @@ const ProductDetailModifyForm = () => {
                         id="selling-price"
                         placeholder="판매금액을 입력해주세요."
                         value={sellingPriceValue}
-                        readOnly
+                        onChange={(e) => setSellingPriceValue(e.target.value)}
                     />
                 </li>
-                {/*<li>*/}
-                {/*    <select>*/}
-                {/*        <option>{productStatusValue}</option>*/}
-                {/*    </select>*/}
-                {/*</li>*/}
-                {/*<li>*/}
-                {/*    <select onChange={handleSellingPrice}>*/}
-                {/*        <option>스티커</option>*/}
-                {/*        <option>다이어리</option>*/}
-                {/*        <option>키링</option>*/}
-                {/*    </select>*/}
-                {/*</li>*/}
+                <li>
+                    <select>
+                        <option>{productStatusValue}</option>
+                    </select>
+                </li>
+                <li>
+                    <select onChange={handleSellingPrice}>
+                        <option>스티커</option>
+                        <option>다이어리</option>
+                        <option>키링</option>
+                    </select>
+                </li>
                 <li>
                     {/*<Input*/}
                     {/*    label="대표 이미지"*/}

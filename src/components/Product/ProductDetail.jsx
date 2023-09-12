@@ -16,7 +16,7 @@ const ProductDetail = (props) => {
     const [checkModal, setCheckModal] = useState(false);
 
     const handleCancelCheckModal = () => {
-        setCheckModal(true);
+        setCheckModal(false);
     }
 
     return (
@@ -50,14 +50,14 @@ const ProductDetail = (props) => {
                 </ul>
             </ProductDetailStyle>
 
-            {CheckModal && (
-                <CheckModal
-                    handleCancelCheckModal={handleCancelCheckModal}
-                    txt="제품을 삭제하시겠습니까?"
-                    leftbtn="취소하기"
-                    rightbtn="삭제하기"
-                />
-            )}
+            {/*{CheckModal && (*/}
+            {/*    <CheckModal*/}
+            {/*        handleCancelCheckModal={handleCancelCheckModal}*/}
+            {/*        txt="제품을 삭제하시겠습니까?"*/}
+            {/*        leftbtn="취소하기"*/}
+            {/*        rightbtn="삭제하기"*/}
+            {/*    />*/}
+            {/*)}*/}
         </>
 
     )

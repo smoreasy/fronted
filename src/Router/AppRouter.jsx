@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import Splash from "../pages/Splash";
-import Login from "../pages/Login";
+import LoginPage from "../pages/LoginPage";
 import LoginLoading from "../pages/LoginLoading";
 import ContentLayout from "./ContentLayout";
 import ProductPage from "../pages/ProductPage";
@@ -15,7 +15,7 @@ const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Splash />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/loginLoading" element={<LoginLoading />} />
 
             <Route path="/" element={<ContentLayout />}>

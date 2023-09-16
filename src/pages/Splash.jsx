@@ -7,7 +7,7 @@ const Splash = () => {
 
     useEffect(() => {
         const waitTime = setTimeout(() => {
-            navigate('/product/all-products');
+            navigate('/login');
         }, 2000);
     }, [])
     return (

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --basic-color: #444;
     --basic-font-color: #fff;
   }
+  
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -66,6 +67,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: inherit;
     cursor: pointer;
     text-align: inherit;
+  }
+  
+  a {
+    text-decoration: none;
   }
 `
 

@@ -1,20 +1,26 @@
+import {Link} from "react-router-dom";
+import LoginButton from "../Button/LoginButton";
 import styled from "styled-components";
 
-const LoginForm = (props) => {
+const LoginForm = (loginData) => {
     return (
         <LoginFormStyle>
-            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Symbols/Bubbles.png" alt="Bubbles" width="200" height="200" />
-            {props.children}
+            {loginData.loginData.map((ele, idx) =>
+                <Link to={ele.link} key={idx}>
+                    <LoginButton props={ele}/>
+                </Link>
+            )}
         </LoginFormStyle>
     )
 }
 
 export default LoginForm;
 
-const LoginFormStyle = styled.div`
-  padding-top: 200px;
+const LoginFormStyle = styled.form`
+  margin-top: 20px;
   
   button {
-    margin-bottom: 10px;
+    margin-bottom: 4px;
   }
 `
+

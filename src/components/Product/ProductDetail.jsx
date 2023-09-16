@@ -3,10 +3,10 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import HeaderBack from "../common/Header/HeaderBack";
 import Navbar from "../common/Navbar";
-import ProductDeleteAPI from "../../services/ProductDeleteAPI";
 import FormSubmitButton from "../common/Button/FormSubmitButton";
 
 import CheckModal from "../common/Modal/CheckModal";
+import ProductDeleteAPI from "../../apis/services/ProductDeleteAPI";
 
 
 const ProductDetail = (props) => {
@@ -59,7 +59,6 @@ const ProductDetail = (props) => {
             {/*    />*/}
             {/*)}*/}
         </>
-
     )
 }
 

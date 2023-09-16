@@ -5,7 +5,7 @@ import { ReactComponent as IconShowModal } from "../../../assets/images/icon-sho
 import {useEffect, useState} from "react";
 import Modal from "../Modal/Modal";
 import CheckModal from "../Modal/CheckModal";
-import ProductDeleteAPI from "../../../services/ProductDeleteAPI";
+import ProductDeleteAPI from "../../../apis/services/ProductDeleteAPI";
 
 const HeaderBack = (props) => {
     const { id } = useParams();

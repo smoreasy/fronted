@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const LoginButton = (props) => {
-    console.log(props);
     return (
         <LoginButtonStyle type="button">
             <img key={props.props.id} src={props.props.logo} width="25" height="25" />

@@ -20,7 +20,7 @@ const loginData = [
     },
     {
         method: '구글',
-        link: GOOGLE_AUTH_URL,
+        link: 'http://43.200.49.69:8080/login/oauth2/code/google',
         logo: IconGoogle,
     }
 ];

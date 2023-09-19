@@ -3,6 +3,7 @@ import LoginButton from "../Button/LoginButton";
 import styled from "styled-components";
 
 const LoginForm = (loginData) => {
+
     return (
         <LoginFormStyle>
             {loginData.loginData.map((ele, idx) =>

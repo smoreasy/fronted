@@ -10,12 +10,13 @@ import MyPage from "../pages/MyPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
 import ProductDetailModifyPage from "../pages/ProductDetailModifyPage";
 import StoreRegisterPage from "../pages/StoreRegisterPage";
-
+import KakaoCallbackPage from "../pages/KakaoCallbackPage";
 const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/login/oauth2/callback/kakao" element={<KakaoCallbackPage />}/>
             <Route path="/loginLoading" element={<LoginLoading />} />
 
             <Route path="/" element={<ContentLayout />}>

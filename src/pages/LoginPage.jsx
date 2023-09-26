@@ -1,11 +1,16 @@
-import LoginForm from "../components/common/Form/LoginForm";
+import SocialLoginForm from "../components/common/Form/SocialLoginForm";
 import { GOOGLE_AUTH_URL, KAKAO_AUTH_URL } from "../apis/services/OAuth";
-import { Link } from "react-router-dom";
+
+import { isLogin } from "../recoil/atom/isLogin";
 
 import IconFacebook from "../assets/images/sns-facebook.svg"
 import IconKakao from "../assets/images/sns-kakao.svg";
 import IconGoogle from "../assets/images/sns-google.svg";
 import styled from "styled-components";
+import LoginForm from "../components/common/Form/LoginForm";
+import {useRecoilValue} from "recoil";
+import { useEffect } from "react";
+import {Link} from "react-router-dom";
 
 const loginData = [
     {
@@ -20,19 +25,36 @@ const loginData = [
     },
     {
         method: '구글',
-        link: 'http://43.200.49.69:8080/login/oauth2/code/google',
+        link: GOOGLE_AUTH_URL,
         logo: IconGoogle,
     }
 ];
 
 const LoginPage = () => {
+    // const [isLoginData, setIsLoginData] = useRecoilValue(isLogin);
+    // const token = window.location.href.split('?token=')[1];
+    //
+    // useEffect(() => {
+    //     if(token) {
+    //         localStorage.setItem('loginToken', token);
+    //     }
+    //
+    //     if(localStorage.getItem('loginToken')) {
+    //         setIsLoginData(true);
+    //     }
+    // });
+
     return (
         <LoginPageStyle>
-            <div className="intro-login">
-                <h1>로그인페이지입니다.</h1>
-                <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Activities/Admission%20Tickets.png" alt="Admission Tickets" width="100" height="100" />
-            </div>
-            <LoginForm loginData={loginData} />
+            <h1>로그인</h1>
+
+            <LoginForm />
+
+            <Link to={'/join'}>
+                <button className="joinButton">이메일로 회원가입</button>
+            </Link>
+
+            <SocialLoginForm loginData={loginData} />
         </LoginPageStyle>
     )
 }
@@ -41,14 +63,15 @@ export default LoginPage;
 const LoginPageStyle = styled.div`
   width: calc(100% - 60px);
   margin: 0 auto;
-  .intro-login {
-    padding: 240px 0 100px 0;
-    text-align: center;
-
-    h1 {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }    
+  text-align: center;
+  
+  h1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    
+    padding: 120px 0 10px 0;
   }
-
+  .joinButton {
+    margin-top: 20px;
+  }
 `

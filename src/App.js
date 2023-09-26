@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import AppRouter from "./Router/AppRouter";
 import { Layout } from "./styles/Layout";
 import GlobalStyle from "./styles/GlobalStyle";
+import {RecoilRoot} from "recoil";
 
 function App() {
     function setScreenSize() {
@@ -13,10 +14,13 @@ function App() {
     });
 
   return (
-      <Layout>
-          <GlobalStyle />
-          <AppRouter />
-      </Layout>
+      <RecoilRoot>
+          <Layout>
+              <GlobalStyle />
+              <AppRouter />
+          </Layout>
+      </RecoilRoot>
+
   );
 }
 

@@ -1,4 +1,5 @@
 import {Route, Routes} from "react-router-dom";
+import MainPage from "../pages/MainPage";
 import Splash from "../pages/Splash";
 import LoginPage from "../pages/LoginPage";
 import LoginLoading from "../pages/LoginLoading";
@@ -10,13 +11,17 @@ import MyPage from "../pages/MyPage";
 import ProductDetailPage from "../pages/ProductDetailPage";
 import ProductDetailModifyPage from "../pages/ProductDetailModifyPage";
 import StoreRegisterPage from "../pages/StoreRegisterPage";
-
+import KakaoCallbackPage from "../pages/KakaoCallbackPage";
+import JoinPage from "../pages/JoinPage";
 const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Splash />} />
+            <Route path="/main" element={<MainPage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/login/oauth2/callback/kakao" element={<KakaoCallbackPage />}/>
             <Route path="/loginLoading" element={<LoginLoading />} />
+            <Route path="/join" element={<JoinPage />} />
 
             <Route path="/" element={<ContentLayout />}>
                 <Route path="product/all-products" element={<ProductPage />} />

@@ -1,7 +1,7 @@
 import SocialLoginForm from "../components/common/Form/SocialLoginForm";
 import { GOOGLE_AUTH_URL, KAKAO_AUTH_URL } from "../apis/services/OAuth";
 
-import { isLogin } from "../recoil/atom/isLogin";
+import { isLogin } from "../recoil/atom/IsLogin";
 
 import IconFacebook from "../assets/images/sns-facebook.svg"
 import IconKakao from "../assets/images/sns-kakao.svg";

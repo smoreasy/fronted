@@ -1,15 +1,18 @@
 import Input from "./Input";
 import SubmitButton from "../Button/FormSubmitButton";
 import {useNavigate} from "react-router-dom";
-import {useEffect, useState} from "react";
-import {recoilPersist} from "recoil-persist";
-import {useRecoilValue} from "recoil";
-import isLogin from "../../../recoil/atom/isLogin";
+import { useState } from "react";
+import {useRecoilState} from "recoil";
+import {IsLogin} from "../../../recoil/atom/IsLogin";
+
 const LoginForm = () => {
     const navigate = useNavigate();
+    const [isLogin, setIsLogin] = useRecoilState(IsLogin);
 
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
+
+
     const handleLoginFormSubmit = (e) => {
         e.preventDefault();
 
@@ -24,10 +27,13 @@ const LoginForm = () => {
                     password: `${passwordValue}`,
                 }),
             }).then((response) => {
-                const responseJson = response.json();
-                console.log(responseJson);
-                if(responseJson.token) {
-                    localStorage.setItem('token', responseJson);
+                console.log(response);
+                if(response.status === 422) {
+                    // 아이디비밀번호 잘못 입력했을 때
+                } else {
+                    // 로그인에 성공하면
+                    // atom에 로그인된 회원정보 저장
+                    setIsLogin(true);
                     navigate('/main');
                 }
             })

@@ -1,18 +1,24 @@
-import styled from "styled-components";
 import Input from "./Input";
 import SubmitButton from "../Button/FormSubmitButton";
 import {useNavigate} from "react-router-dom";
-import {useState} from "react";
+import { useState } from "react";
+import {useRecoilState} from "recoil";
+import {IsLogin} from "../../../recoil/atom/IsLogin";
+
 const LoginForm = () => {
     const navigate = useNavigate();
 
+    const [isLogin, setIsLogin] = useRecoilState(IsLogin);
+
     const [emailValue, setEmailValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
+
+
     const handleLoginFormSubmit = (e) => {
         e.preventDefault();
 
         try {
-            fetch('http://43.200.49.69:8080/members', {
+            fetch('http://43.200.49.69:8080/members/login', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
@@ -23,8 +29,23 @@ const LoginForm = () => {
                 }),
             }).then((response) => {
                 console.log(response);
-                navigate('/main');
-            });
+                if(response.status === 422) {
+                    // 아이디비밀번호 잘못 입력했을 때
+                } else {
+                    // 로그인에 성공하면
+                    // atom에 로그인된 회원정보 저장
+
+                    // if(token) {
+                    //     localStorage.setItem('loginToken', token);
+                    // }
+                    //
+                    // if(localStorage.getItem('loginToken')) {
+                    //     setIsLogin(true);
+                    //     navigate('/main');
+                    // }
+                    setIsLogin(true);
+                }
+            })
         } catch (error) {
             console.log('error: ', error);
         }

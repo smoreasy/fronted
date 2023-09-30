@@ -1,7 +1,7 @@
 import SocialLoginForm from "../components/common/Form/SocialLoginForm";
 import { GOOGLE_AUTH_URL, KAKAO_AUTH_URL } from "../apis/services/OAuth";
 
-import { isLogin } from "../recoil/atom/isLogin";
+import { isLogin } from "../recoil/atom/IsLogin";
 
 import IconFacebook from "../assets/images/sns-facebook.svg"
 import IconKakao from "../assets/images/sns-kakao.svg";
@@ -31,18 +31,6 @@ const loginData = [
 ];
 
 const LoginPage = () => {
-    // const [isLoginData, setIsLoginData] = useRecoilValue(isLogin);
-    // const token = window.location.href.split('?token=')[1];
-    //
-    // useEffect(() => {
-    //     if(token) {
-    //         localStorage.setItem('loginToken', token);
-    //     }
-    //
-    //     if(localStorage.getItem('loginToken')) {
-    //         setIsLoginData(true);
-    //     }
-    // });
 
     return (
         <LoginPageStyle>
@@ -71,7 +59,13 @@ const LoginPageStyle = styled.div`
     
     padding: 120px 0 10px 0;
   }
+  input {
+    margin-bottom: 10px;
+  }
   .joinButton {
     margin-top: 20px;
+  }
+  button {
+    margin-bottom: 10px;
   }
 `

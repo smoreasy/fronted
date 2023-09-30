@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 import Navbar from "../components/common/Navbar";
+import HeaderBasic from "../components/common/Header/HeaderBasic";
 import HeaderBack from "../components/common/Header/HeaderBack";
 import styled from "styled-components";
 const ContentLayout = () => {
@@ -14,8 +15,19 @@ const ContentLayout = () => {
         </>
     )
 }
+const LoginLayout = () => {
+    return (
+        <>
+            <HeaderBasic />
+            <OutletStyle>
+                <Outlet />
+            </OutletStyle>
+            <Navbar />
+        </>
+    )
+}
 
-export default ContentLayout;
+export {ContentLayout, LoginLayout } ;
 
 const OutletStyle = styled.div`
   padding: 80px 40px;

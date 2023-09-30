@@ -2,7 +2,7 @@ import instance from "../utils/instance";
 
 const JoinAPI = (userInfo) => {
 
-    instance.post('/', userInfo)
+    instance.post('/members', userInfo)
         .then((response) => {
             console.log(response);
         })

@@ -2,12 +2,17 @@ import axios from "axios";
 
 const instance = axios.create({
     baseURL: process.env.REACT_APP_REDIRECT_URL,
+    timeout: 2000,
 });
 
 // 요청 인터셉터
 instance.interceptors.request.use(
     (config) => {
         // 모든 request에 auth token headers를 넣는다.
+        const token = localStorage.getItem('token');
+        if(token) {
+            config.headers.Authorization = `Bearer ${token}`
+        }
 
         // const accessToken = getCookie('accessToken');
         //
@@ -19,7 +24,6 @@ instance.interceptors.request.use(
         return config;
     },
     (error) => {
-        // console.log(error);
         return Promise.reject(error);
     }
 );
@@ -30,8 +34,9 @@ instance.interceptors.response.use(
         return response;
     },
     (error) => {
-        // console.log(error);
-        return Promise.reject(error);
+        if(error.code === 'ECONNABORTED' && error.message.indexOf('timeout') !== -1) {
+            console.log('timeout 에러가 발생했습니다.')
+        }        return Promise.reject(error);
     }
 );
 

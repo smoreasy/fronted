@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const LoginButton = (props) => {
+const SocialLoginButton = (props) => {
     return (
         <LoginButtonStyle type="button" url={props.props.logo}>
             {/*<img key={props.props.id} src={props.props.logo} width="25" height="25" />*/}
@@ -9,7 +9,7 @@ const LoginButton = (props) => {
     )
 }
 
-export default LoginButton;
+export default SocialLoginButton;
 
 const LoginButtonStyle = styled.button`
   position: relative;

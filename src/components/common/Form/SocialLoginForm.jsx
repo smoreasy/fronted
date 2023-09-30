@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import LoginButton from "../Button/LoginButton";
+import SocialLoginButton from "../Button/SocialLoginButton";
 import styled from "styled-components";
 
 const SocialLoginForm = (loginData) => {
@@ -9,7 +9,7 @@ const SocialLoginForm = (loginData) => {
             <form>
                 {loginData.loginData.map((ele, idx) =>
                     <Link to={ele.link} key={idx}>
-                        <LoginButton props={ele}/>
+                        <SocialLoginButton props={ele}/>
                     </Link>
                 )}
             </form>
@@ -33,9 +33,6 @@ const SocialLoginFormStyle = styled.div`
       margin: 0 8px 4px 8px;
     }
 
-  }
-  button {
-    margin-bottom: 4px;
   }
 `
 

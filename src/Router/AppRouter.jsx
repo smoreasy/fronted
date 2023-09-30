@@ -3,7 +3,7 @@ import MainPage from "../pages/MainPage";
 import Splash from "../pages/Splash";
 import LoginPage from "../pages/LoginPage";
 import LoginLoading from "../pages/LoginLoading";
-import ContentLayout from "./ContentLayout";
+import { ContentLayout, LoginLayout } from "./ContentLayout";
 import ProductPage from "../pages/ProductPage";
 import ProductRegisterPage from "../pages/ProductRegisterPage";
 import StorePage from '../pages/StorePage';
@@ -17,11 +17,14 @@ const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Splash />} />
-            <Route path="/main" element={<MainPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/login/oauth2/callback/kakao" element={<KakaoCallbackPage />}/>
             <Route path="/loginLoading" element={<LoginLoading />} />
             <Route path="/join" element={<JoinPage />} />
+
+            <Route path="/" element={<LoginLayout />}>
+                <Route path="/main" element={<MainPage />} />
+            </Route>
 
             <Route path="/" element={<ContentLayout />}>
                 <Route path="product/all-products" element={<ProductPage />} />

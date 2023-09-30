@@ -31,18 +31,6 @@ const loginData = [
 ];
 
 const LoginPage = () => {
-    // const [isLoginData, setIsLoginData] = useRecoilValue(isLogin);
-    // const token = window.location.href.split('?token=')[1];
-    //
-    // useEffect(() => {
-    //     if(token) {
-    //         localStorage.setItem('loginToken', token);
-    //     }
-    //
-    //     if(localStorage.getItem('loginToken')) {
-    //         setIsLoginData(true);
-    //     }
-    // });
 
     return (
         <LoginPageStyle>
@@ -71,7 +59,13 @@ const LoginPageStyle = styled.div`
     
     padding: 120px 0 10px 0;
   }
+  input {
+    margin-bottom: 10px;
+  }
   .joinButton {
     margin-top: 20px;
+  }
+  button {
+    margin-bottom: 10px;
   }
 `

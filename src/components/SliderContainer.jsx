@@ -3,7 +3,7 @@ import IconKakao from "../assets/images/sns-kakao.svg";
 import IconFacebook from "../assets/images/sns-facebook.svg";
 import IconGoogle from "../assets/images/sns-google.svg";
 import {Link} from "react-router-dom";
-import LoginButton from "./common/Button/LoginButton";
+import SocialLoginButton from "./common/Button/SocialLoginButton";
 import SliderContents from "./SliderContents";
 import {useEffect, useState} from "react";
 import styled from "styled-components";
@@ -71,6 +71,7 @@ const SlideStyle = styled.ul`
   width: 390px;
   display: flex;
   overflow: hidden;
+  margin: 0 auto;
   
   
   li {

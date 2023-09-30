@@ -24,4 +24,9 @@ const JoinPageStyle = styled.div`
 
     padding: 20px 0;
   }
+  
+  input {
+    margin: 8px 0 14px 0;
+  }
+
 `

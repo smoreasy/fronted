@@ -7,6 +7,7 @@ import {IsLogin} from "../../../recoil/atom/IsLogin";
 
 const LoginForm = () => {
     const navigate = useNavigate();
+
     const [isLogin, setIsLogin] = useRecoilState(IsLogin);
 
     const [emailValue, setEmailValue] = useState('');
@@ -17,7 +18,7 @@ const LoginForm = () => {
         e.preventDefault();
 
         try {
-            fetch('http://localhost:8080/login', {
+            fetch('http://43.200.49.69:8080/members/login', {
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',
@@ -33,8 +34,16 @@ const LoginForm = () => {
                 } else {
                     // 로그인에 성공하면
                     // atom에 로그인된 회원정보 저장
+
+                    // if(token) {
+                    //     localStorage.setItem('loginToken', token);
+                    // }
+                    //
+                    // if(localStorage.getItem('loginToken')) {
+                    //     setIsLogin(true);
+                    //     navigate('/main');
+                    // }
                     setIsLogin(true);
-                    navigate('/main');
                 }
             })
         } catch (error) {

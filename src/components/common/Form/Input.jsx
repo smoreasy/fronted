@@ -11,7 +11,8 @@ const Input = (props) => {
 }
 
 const LabelStyle = styled.label`
-    display: block;
+  display: block;
+  margin-bottom: 8px;
 `
 
 const InputStyle = styled.input`

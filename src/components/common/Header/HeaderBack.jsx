@@ -70,8 +70,8 @@ const HeaderBackStyle = styled.header`
   position: absolute;
   top: 0;
   left: 0;
-  
+
   button {
-    padding: 10px 0;
+    padding: 8px;
   }
 `

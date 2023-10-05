@@ -3,7 +3,6 @@ import AppRouter from "./Router/AppRouter";
 import { Layout } from "./styles/Layout";
 import GlobalStyle from "./styles/GlobalStyle";
 import {RecoilRoot} from "recoil";
-import {BrowserRouter} from "react-router-dom";
 
 function App() {
     function setScreenSize() {

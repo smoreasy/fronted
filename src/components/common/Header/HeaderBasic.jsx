@@ -2,12 +2,12 @@ import styled from "styled-components";
 import {useNavigate, useParams} from "react-router-dom";
 import { ReactComponent as IconArrowBasic } from "../../../assets/images/icon-arrow-basic.svg";
 import { ReactComponent as IconShowModal } from "../../../assets/images/icon-show-modal.svg";
+import { ReactComponent as IconSearch } from "../../../assets/images/icon-search.svg";
+import { ReactComponent as IconAlarm } from "../../../assets/images/icon-alarm.svg";
 import {useEffect, useState} from "react";
 import Modal from "../Modal/Modal";
 import CheckModal from "../Modal/CheckModal";
 import ProductDeleteAPI from "../../../apis/services/ProductDeleteAPI";
-import HeaderLoginButton from "../Button/HeaderLoginButton";
-
 
 const HeaderBasic = (props) => {
     const { id } = useParams();
@@ -35,11 +35,18 @@ const HeaderBasic = (props) => {
             <button onClick={() => {navigate(-1)}}>
                 <IconArrowBasic width="24" height="24" />
             </button>
-            <h1>{props.text}</h1>
-            <HeaderLoginButton
-                text="로그인"
-                onClick={handleShowModal}>
-            </HeaderLoginButton>
+
+            <div className="header-buttons">
+                <button>
+                    <IconSearch width="22" height="22" stroke="#222" />
+                </button>
+                <button>
+                    <IconAlarm width="24" height="24" />
+                </button>
+                <button onClick={handleShowModal}>
+                    <IconShowModal width="24" height="24" stroke="#222" fill="#222"/>
+                </button>
+            </div>
 
             {modal && (
                 <Modal
@@ -63,11 +70,10 @@ export default HeaderBasic;
 const HeaderBasicStyle = styled.header`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   
   width: 100%;
   border-bottom: 1px solid #ccc;
-  
+
   background-color: #fff;
 
   position: absolute;
@@ -75,6 +81,11 @@ const HeaderBasicStyle = styled.header`
   left: 0;
   
   button {
-    padding: 10px 0;
+    padding: 8px;
+  }
+  
+  .header-buttons {
+    display: flex;
+    align-items: center;
   }
 `
